@@ -1,0 +1,102 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="jsoneditor/jsoneditor.min.css">
+    <script type="text/javascript" src="jsoneditor/jsoneditor.min.js"></script>
+    <h2>PNAF_TITLE</h2>
+</head>
+<body onload="setJSON();">
+
+<div id="p0fs"      style="position:absolute; top:35px;              width:500px; height: 400px;"><h2>P0FS_TITLE</h2></div>
+<div id="pradss"    style="position:absolute; top:35px; left:550px;  width:500px; height: 400px;"><h2>PRADSS_TITLE</h2></div>
+<div id="shttps"    style="position:absolute; top:35px; left:1100px; width:500px; height: 400px;"><h2>SURICATAHTTPS_TITLE</h2></div>
+<div id="httprys"   style="position:absolute; top:35px; left:1650px; width:500px; height: 400px;"><h2>HTTPRYS_TITLE</h2></div>
+<div id="suridss"   style="position:absolute; top:35px; left:2200px; width:500px; height: 400px;"><h2>SURICATAIDSS_TITLE</h2></div>
+<div id="snoidss"   style="position:absolute; top:35px; left:2750px; width:500px; height: 400px;"><h2>SNORTIDSS_TITLE</h2></div>
+
+
+<div id="p0ft"       style="position:absolute; top:500px;              width:500px; height: 400px;"><h2>P0FT_TITLE</h2></div>
+<div id="pradst"     style="position:absolute; top:500px; left:550px;  width:500px; height: 400px;"><h2>PRADST_TITLE</h2></div>
+<div id="shttpt"     style="position:absolute; top:500px; left:1100px; width:500px; height: 400px;"><h2>SURICATAHTTPT_TITLE</h2></div>
+<div id="httpryt"    style="position:absolute; top:500px; left:1650px; width:500px; height: 400px;"><h2>HTTPRYT_TITLE</h2></div>
+<div id="suridstip"  style="position:absolute; top:500px; left:2200px; width:500px; height: 400px;"><h2>SURICATAIDSTIP_TITLE</h2></div>
+<div id="snoidstip"  style="position:absolute; top:500px; left:2750px; width:500px; height: 400px;"><h2>SNORTIDSTIP_TITLE</h2></div>
+
+<div id="soais"      style="position:absolute; top:1000px;              width:500px; height: 400px;"><h2>SNORTAPPIDS_TITLE</h2></div>
+<div id="tcpds"      style="position:absolute; top:1000px; left:550px;  width:500px; height: 400px;"><h2>TCPDSTATS_TITLE</h2></div>
+<div id="suridstevt" style="position:absolute; top:1000px; left:2200px; width:500px; height: 400px;"><h2>SURICATAIDSTEVT_TITLE</h2></div>
+<div id="snoidstevt" style="position:absolute; top:1000px; left:2750px; width:500px; height: 400px;"><h2>SNORTIDSTEVT_TITLE</h2></div>
+
+<script type="text/javascript" >
+    // create the editor
+    var container_p0fs       = document.getElementById("p0fs");
+    var editor_p0fs          = new JSONEditor(container_p0fs);
+    var container_p0ft       = document.getElementById("p0ft");
+    var editor_p0ft          = new JSONEditor(container_p0ft);
+    var container_pradss     = document.getElementById("pradss");
+    var editor_pradss        = new JSONEditor(container_pradss);
+    var container_pradst     = document.getElementById("pradst");
+    var editor_pradst        = new JSONEditor(container_pradst);
+    var container_soais      = document.getElementById("soais");
+    var editor_soais         = new JSONEditor(container_soais);
+    var container_shttps     = document.getElementById("shttps");
+    var editor_shttps        = new JSONEditor(container_shttps);
+    var container_shttpt     = document.getElementById("shttpt");
+    var editor_shttpt        = new JSONEditor(container_shttpt);
+    var container_httprys    = document.getElementById("httprys");
+    var editor_httprys       = new JSONEditor(container_httprys);
+    var container_httpryt    = document.getElementById("httpryt");
+    var editor_httpryt       = new JSONEditor(container_httpryt);
+    var container_tcpds      = document.getElementById("tcpds");
+    var editor_tcpds         = new JSONEditor(container_tcpds);
+    var container_suridss    = document.getElementById("suridss");
+    var editor_suridss       = new JSONEditor(container_suridss);
+    var container_suridstip  = document.getElementById("suridstip");
+    var editor_suridstip     = new JSONEditor(container_suridstip);
+    var container_suridstevt = document.getElementById("suridstevt");
+    var editor_suridstevt    = new JSONEditor(container_suridstevt);
+    var container_snoidss    = document.getElementById("snoidss");
+    var editor_snoidss       = new JSONEditor(container_snoidss);
+    var container_snoidstip  = document.getElementById("snoidstip");
+    var editor_snoidstip     = new JSONEditor(container_snoidstip);
+    var container_snoidstevt = document.getElementById("snoidstevt");
+    var editor_snoidstevt    = new JSONEditor(container_snoidstevt);
+
+    function setJSON () {
+        var json_p0fs = JSON_P0FS;
+        editor_p0fs.set(json_p0fs);
+        var json_p0ft = JSON_P0FT;
+        editor_p0ft.set(json_p0ft);
+        var json_pradss = JSON_PRADSS;
+        editor_pradss.set(json_pradss);
+        var json_pradst = JSON_PRADST;
+        editor_pradst.set(json_pradst);
+        var json_soais = JSON_SNORTAPPIDS;
+        editor_soais.set(json_soais);
+        var json_shttps = JSON_SURICATAHTTPS;
+        editor_shttps.set(json_shttps);
+        var json_shttpt = JSON_SURICATAHTTPT;
+        editor_shttpt.set(json_shttpt);
+        var json_httprys = JSON_HTTPRYS;
+        editor_httprys.set(json_httprys);
+        var json_httpryt = JSON_HTTPRYT;
+        editor_httpryt.set(json_httpryt);
+        var json_tcpds = JSON_TCPDSTATS;
+        editor_tcpds.set(json_tcpds);
+        var json_suridss = JSON_SURICATAIDSS;
+        editor_suridss.set(json_suridss);
+        var json_suridstip = JSON_SURICATAIDSTIP;
+        editor_suridstip.set(json_suridstip);
+        var json_suridstevt = JSON_SURICATAIDSTEVT;
+        editor_suridstevt.set(json_suridstevt);
+        var json_snoidss = JSON_SNORTIDSS;
+        editor_snoidss.set(json_snoidss);
+        var json_snoidstip = JSON_SNORTIDSTIP;
+        editor_snoidstip.set(json_snoidstip);
+        var json_snoidstevt = JSON_SNORTIDSTEVT;
+        editor_snoidstevt.set(json_snoidstevt);
+    }
+</script>
+
+</body>
+</html>

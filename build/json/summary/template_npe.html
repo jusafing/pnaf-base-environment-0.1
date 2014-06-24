@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="jsoneditor/jsoneditor.min.css">
+    <script type="text/javascript" src="jsoneditor/jsoneditor.min.js"></script>
+    <h2>PNAF_TITLE</h2>
+</head>
+<body onload="setJSON();">
+
+<div id="p0fs"    style="position:absolute; top:35px;              width:500px; height: 400px;"><h2>P0FS_TITLE</h2></div>
+<div id="pradss"  style="position:absolute; top:35px; left:550px;  width:500px; height: 400px;"><h2>PRADSS_TITLE</h2></div>
+<div id="shttps"  style="position:absolute; top:35px; left:1100px; width:500px; height: 400px;"><h2>SHTTPS_TITLE</h2></div>
+<div id="httprys" style="position:absolute; top:35px; left:1650px; width:500px; height: 400px;"><h2>HTTPRYS_TITLE</h2></div>
+
+
+<div id="p0ft"    style="position:absolute; top:500px;              width:500px; height: 400px;"><h2>P0FT_TITLE</h2></div>
+<div id="pradst"  style="position:absolute; top:500px; left:550px;  width:500px; height: 400px;"><h2>PRADST_TITLE</h2></div>
+<div id="shttpt"  style="position:absolute; top:500px; left:1100px; width:500px; height: 400px;"><h2>SHTTPT_TITLE</h2></div>
+<div id="httpryt" style="position:absolute; top:500px; left:1650px; width:500px; height: 400px;"><h2>HTTPRYT_TITLE</h2></div>
+
+<div id="soais"  style="position:absolute; top:1000px; width:500px; height: 400px;"><h2>SOAIS_TITLE</h2></div>
+
+<script type="text/javascript" >
+    // create the editor
+    var container_p0fs   = document.getElementById("p0fs");
+    var editor_p0fs      = new JSONEditor(container_p0fs);
+    var container_p0ft   = document.getElementById("p0ft");
+    var editor_p0ft      = new JSONEditor(container_p0ft);
+    var container_pradss = document.getElementById("pradss");
+    var editor_pradss    = new JSONEditor(container_pradss);
+    var container_pradst = document.getElementById("pradst");
+    var editor_pradst    = new JSONEditor(container_pradst);
+    var container_soais  = document.getElementById("soais");
+    var editor_soais     = new JSONEditor(container_soais);
+    var container_shttps = document.getElementById("shttps");
+    var editor_shttps    = new JSONEditor(container_shttps);
+    var container_shttpt = document.getElementById("shttpt");
+    var editor_shttpt    = new JSONEditor(container_shttpt);
+    var container_httprys = document.getElementById("httprys");
+    var editor_httprys    = new JSONEditor(container_httprys);
+    var container_httpryt = document.getElementById("httpryt");
+    var editor_httpryt    = new JSONEditor(container_httpryt);
+
+    function setJSON () {
+        var json_p0fs = JSON_P0FS;
+        editor_p0fs.set(json_p0fs);
+        var json_p0ft = JSON_P0FT;
+        editor_p0ft.set(json_p0ft);
+        var json_pradss = JSON_PRADSS;
+        editor_pradss.set(json_pradss);
+        var json_pradst = JSON_PRADST;
+        editor_pradst.set(json_pradst);
+        var json_soais = JSON_SOAIS;
+        editor_soais.set(json_soais);
+        var json_shttps = JSON_SHTTPS;
+        editor_shttps.set(json_shttps);
+        var json_shttpt = JSON_SHTTPT;
+        editor_shttpt.set(json_shttpt);
+        var json_httprys = JSON_HTTPRYS;
+        editor_httprys.set(json_httprys);
+        var json_httpryt = JSON_HTTPRYT;
+        editor_httpryt.set(json_httpryt);
+    }
+</script>
+
+</body>
+</html>
