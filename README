@@ -2,10 +2,14 @@
 P A S S I V E    N E T W O R K    A U D I T    F R A M E W O R K    (PNAF) V0.1
 *******************************************************************************
 
-********************************* IMPORTANT ***********************************
+*************************************************+*****************************
+***************************** I M P O R T A N T *******************************
+
 This public release includes only the base environment:
-- Main installer v0.1
-- No PNAF modules
+- Main installer v0.1: Installs all the tools used by PNAF (see Architecture)
+- No PNAF modules: No processing engines
+
+***************************************************************++**************
 ***************************************************************++**************
 
 ###############################################################################
@@ -13,11 +17,11 @@ This public release includes only the base environment:
 ###############################################################################
 
 PNAF is a framework intended to provide the capability of getting a security 
-assessment of network plattforms (small, medium and large) by analysing 
-in-depth the network traffic (in a passive way) and by providing a high-level
-interpretation in an automated way. It combines differet analysis techniques,
-algorithms and technologies. To this extent, the framework is intended to 
-achieve the following goals:
+assessment of network plattforms (small, medium and large) by performing
+in-depth over network traffic (in a passive way) and by providing a high-level
+interpretation in an automated way. It combines different analysis techniques,
+algorithms and technologies. This framework is intended to achieve the 
+following goals:
 
     Architecture:
     a. To be a flexible, scalable and modular framework
@@ -59,7 +63,6 @@ manage specific tools and process the data.
 	* Suricata
 	* Snort
 	* Bro
-	* Barnyard
 
     > NFAE	- Network Flow Analysis Engine
 	* Cxtracker  : Basic flow data summary
@@ -76,19 +79,18 @@ manage specific tools and process the data.
 	* Ssldump    : SSLv3/TLS data tracker
 	* Dnsdump    : DNS data extraction
 	* Passivedns : Passive DNS data collection
-	* Dnscap     : DNS capture utility (tcpdump-like for DNS)
 	* Tcpxtract  : File extraction
+	* TcpExtract : File extraction
 	* Tcpdump    : Pcap filtering
+	* Tcpflow    : Session tracking
 
     > NSAE	- Network Security Audit Engine
 
 -----------------------------------------------
 3.  DVM - DATA VISUALIZATION MODULE
 -----------------------------------------------
-    > WDVE	- Web Data Visualization Engine
     > GSVE	- Graphic Security Visualization Engine
     > SARE	- Security Audit Report Engine
-    > DIEE	- Data Import/Export Engine
 
 
 ###############################################################################
@@ -101,8 +103,8 @@ The main installer prepares automatically the whole environment by compiling
 all the tools included within the framework as well as their dependencies.
 
 Since the installer downloads some packages using either apt or emerge
-depending on the distribution, then the installer needs to have access to 
-Internet. Otherwise you can use the option '--no-packages' and then install
+depending on the distribution, then it needs to have Internet access.
+Otherwise you can use the option '--no-packages' and then install
 by yourself the following packages/libraries:
 
 APT packages:
@@ -118,7 +120,7 @@ libnetfilter-queue1 libnetfilter-queue-dev libnet-pcap-perl libnfnetlink0
 libnfnetlink-dev libnl-3-dev libnl-genl-3-dev libpcap-dev libpcre3 libpcre3-dbg
 libpcre3-dev libsqlite3-dev libssl-dev liburcu-dev libyaml-0-2 libyaml-dev
 liblzo2-dev openssl pkg-config python-dev python-docutils sqlite3 swig git-core
-libglib2.0-dev libtool tcpslice tcpick tshark tcpflow ethtool
+libglib2.0-dev libtool tcpslice tcpick tshark  ethtool
 
 Emerge sources
 --------------
@@ -127,7 +129,7 @@ dev-util/cmake sys-libs/libcap-ng dev-perl/glib-perl dev-libs/jansson
 dev-libs/lzo net-libs/libnet dev-libs/libnl virtual/perl-libnet dev-libs/geoip
 net-libs/libnetfilter_queue net-libs/libnetfilter_conntrack perl-core/libnet 
 dev-perl/Net-PcapUtils dev-perl/Net-Pcap net-libs/libnfnetlink dev-db/sqlite 
-dev-libs/libyaml dev-lang/swig net-analyzer/tcpflow dev-libs/libcli 
+dev-libs/libyaml dev-lang/swig dev-libs/libcli 
 net-analyzer/dsniff dev-perl/DateTime ethtool
 
 
@@ -139,7 +141,12 @@ You can install the whole framework (i.e. including the tools) by using the
 installer script. It has been tested on both Debian 7.x / Gentoo Stage 3
 based systems (clean installation, base system, chrooted)
 
+ # git clone git://repository.jusanet.org/pnaf-base-environment-0.1
+ # cd pnaf-base-environment-0.1
  # ./install.sh DISTRIBUTION
+
+PNAF Base environment is installed in "/pnaf" directory by default.
+Change PNAF_DIR variable on install.sh if you want a different directory
 
 
 ###############################################################################
